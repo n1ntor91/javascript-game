@@ -53,7 +53,7 @@
 		overflow: hidden;
 		opacity: 0.5;
 	">
-		<img src="hero-sprite.png" style="
+		<!-- <img src="hero-sprite.png" style="
 			position: absolute;
 			top: -144px;
 			left: -144px;
@@ -70,7 +70,7 @@
 			border: 2px solid rgb(0, 119, 255);
 			border-radius: 50%;
 		"			
-		></div>
+		></div> -->
 	</div>
 	<div id="hit-block" style="
 		position: absolute;
@@ -81,7 +81,7 @@
 		overflow: hidden;
 		opacity: 0.5;
 	">
-		<img src="hero-sprite.png" style="
+		<!-- <img src="hero-sprite.png" style="
 			position: absolute;
 			top: -452px;
 			left: -442px;
@@ -98,7 +98,7 @@
 			border: 2px solid rgb(0, 119, 255);
 			border-radius: 50%;
 		"			
-		></div>
+		></div> -->
 	</div>	
 	<p id="info" style="
 		display: none;
@@ -542,7 +542,7 @@
 			}, 100);
 			this.finalTimer = setInterval(()=>{
 				if(this.time <= 0){
-					finalTimerText.innerText = 'Game over';
+					finalTimerText.innerText = 'Игра окончена';
 					clearInterval(this.finalTimer);
 				}else{
 					finalTimerText.innerText = `${this.time}`;
@@ -588,7 +588,7 @@
 			//#38002c - фон
 			//#8babbf - текст
 			this.block.style.backgroundColor = '#38002c';
-			this.block.style.border = '5px solid #8babbf';
+			this.block.style.border = '15px solid #8babbf';
 			this.appendP();
 			this.appendNextButton();
 			this.appendSkipButton();
@@ -602,7 +602,7 @@
 			this.p.style.top = '4vh';
 			this.p.style.width = '80%';
 			this.p.style.color = '#8babbf';
-			this.p.style.fontSize = '8pt';
+			this.p.style.fontSize = '18pt';
 			this.p.style.lineHeight = '1.5';
 			this.p.style.fontFamily = "'Press Start 2P', cursive";
 			this.p.onclick = () => {
@@ -614,7 +614,7 @@
 		}
 		appendNextButton(){
 			this.nextButton = window.document.createElement('button');
-			this.setButtonStyle(this.nextButton, 'Next');
+			this.setButtonStyle(this.nextButton, 'Дальше');
 			this.nextButton.style.right = 0;
 			this.nextButton.style.display = 'none';
 			this.nextButton.onclick = () => {
@@ -630,7 +630,7 @@
 		}
 		appendSkipButton(){
 			this.skipButton = window.document.createElement('button');
-			this.setButtonStyle(this.skipButton, 'Skip');
+			this.setButtonStyle(this.skipButton, 'Пропустить');
 			this.skipButton.style.left = 0;
 			this.skipButton.onclick = () => {
 				this.block.style.display = 'none';
@@ -650,7 +650,7 @@
 			button.style.fontFamily = "'Press Start 2P', cursive";
 		}
 		setText(text){
-			if(this.page === this.text.length - 1) this.nextButton.innerText = 'Go';
+			if(this.page === this.text.length - 1) this.nextButton.innerText = 'Вперед!';
 			let innerText = '';
 			let targetText = text;
 			let pos = 0;
@@ -682,8 +682,8 @@
 			this.btnBlock.style.bottom = '10vh';
 			this.btnBlock.style.width = '33%';
 			this.block.appendChild(this.btnBlock);
-			this.skipButton.innerText = 'Clear';
-			this.nextButton.innerText = 'Enter';
+			this.skipButton.innerText = 'Очистить';
+			this.nextButton.innerText = 'Ввод';
 			this.createNumButtons();
 			this.skipButton.onclick = () => {
 				if(this.p.innerText.length > this.mainStrLength){
@@ -702,7 +702,7 @@
 					}
 					if(str === this.password){
 						this.block.style.display = 'none';
-						finalTimerText.innerText = 'You win!';
+						finalTimerText.innerText = 'Ты победил';
 						imgBlock.style.display = 'none';
 					}else{
 						this.p.innerText = 'Пароль неверный, попробуй еще раз :';
@@ -1174,7 +1174,7 @@
 	}
 	const updateHearts = () => {
 		if(lives <= 0){
-			finalTimerText.innerText = 'Game over';
+			finalTimerText.innerText = 'Игра окончена';
 			imgBlock.style.display = 'none';
 		}
 		for(let i = 0; i < lives; i++){
@@ -1299,7 +1299,7 @@
 		div.style.justifyContent = 'center';
 		canvas.appendChild(div);
 		let btn = window.document.createElement('button');
-		btn.innerText = 'PLAY';
+		btn.innerText = 'ИГРАТЬ';
 		btn.style.fontFamily = "'Press Start 2P', cursive";
 		btn.style.fontSize = '30pt';
 		btn.style.backgroundColor = '#8babbf';
